@@ -11,16 +11,28 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { NFC, Ndef } from '@ionic-native/nfc/ngx';
 
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+
+import { FileChooser } from '@ionic-native/file-chooser/ngx';
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+  ],
   providers: [
     NFC,
     Ndef,
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    FileChooser
   ],
   bootstrap: [AppComponent]
 })
