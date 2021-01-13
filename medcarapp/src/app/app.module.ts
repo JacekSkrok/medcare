@@ -16,7 +16,6 @@ import { environment } from '../environments/environment';
 
 import { FileChooser } from '@ionic-native/file-chooser/ngx';
 
-
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -24,7 +23,7 @@ import { FileChooser } from '@ionic-native/file-chooser/ngx';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [
     NFC,

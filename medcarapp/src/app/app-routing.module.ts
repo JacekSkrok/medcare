@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'set-visit',
     loadChildren: () => import('./set-visit/set-visit.module').then( m => m.SetVisitPageModule)
   },
+  {
+    path: 'cal-modal',
+    loadChildren: () => import('./pages/cal-modal/cal-modal.module').then( m => m.CalModalPageModule)
+  },
 ];
 
 @NgModule({
