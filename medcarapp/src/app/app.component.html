@@ -1,3 +1,31 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu menuId="user_menu" content-id="user">
+    <ion-header>
+      <ion-toolbar [routerLink]="'/user-account'" (click)="toggleMenu()">
+        <ion-avatar slot="start">
+          <img src="../assets/avatar.svg" style="padding: 10pt;">
+        </ion-avatar>
+        <ion-label>
+          <i>{{(user$ | async)?.firstname}} {{(user$ | async)?.lastname}}</i>
+        </ion-label>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>       
+        
+        <ion-item [routerLink]="'/user-transaction-history'" (click)="toggleMenu()">
+          <ion-icon name="card" slot="start"></ion-icon>
+          <ion-label>Wallet</ion-label>
+        </ion-item>
+
+        <ion-item [routerLink]="'/user-account'" (click)="toggleMenu()">
+          <ion-icon name="person-outline" slot="start"></ion-icon>
+          <ion-label>Settings</ion-label>
+        </ion-item>
+
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="user"></ion-router-outlet>
 </ion-app>
+ 

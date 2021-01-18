@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list style="margin: 20pt;">
+      <ion-item>
+        <ion-input [(ngModel)]="user.email" placeholder= "email"></ion-input>
+      </ion-item>
+      <ion-item-divider>
+      </ion-item-divider>
+      <ion-item>
+        <ion-input [(ngModel)]="user.firstname" placeholder= "firstname"></ion-input> 
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="user.lastname" placeholder= "lastname"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-datetime [(ngModel)]="user.birthdate" displayFormat="MM/DD/YYYY" placeholder= "birthdate"></ion-datetime>
+        <!-- <ion-input   [(ngModel)]="user.birthdate" placeholder= "birthdate"></ion-input> -->
+      </ion-item>
+      <ion-item-divider>
+      </ion-item-divider>
+      <ion-item>
+        <ion-input [(ngModel)]="user.password" placeholder= "password" type="password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="user.confirmPassword" placeholder= "confirm password" type="password"></ion-input>
+      </ion-item>
+    </ion-list>
+      <ion-button (click)="userRegister()" expand="block" fill="solid" shape="round">
+        Register
+      </ion-button>
+</ion-content>

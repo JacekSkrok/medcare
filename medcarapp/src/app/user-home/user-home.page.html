@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Homepage</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="user_menu">
+      </ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-card>
+  <ion-card-content>
+    <ion-card-title (click)="switchToSetVisitPage()">Umów wizytę</ion-card-title>
+  </ion-card-content>
+</ion-card>
+
+<ion-card>
+  <ion-card-content>
+    <ion-card-title (click)="switchToRegisterEntry()">Zarejestruj wejście</ion-card-title>
+  </ion-card-content>
+</ion-card>
+
+<ion-card>
+  <ion-card-content>
+    <ion-card-title (click)="switchToUserCalendar()">Mój kalendarz</ion-card-title>
+  </ion-card-content>
+</ion-card>
+
+<ion-card>
+  <ion-card-content>
+    <ion-card-title (click)="switchToPreviousVisits()">Historia leczenia</ion-card-title>
+  </ion-card-content>
+</ion-card>

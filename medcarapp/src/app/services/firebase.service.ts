@@ -4,7 +4,6 @@ import { Visit } from '../model/Visit';
 
 import { map } from 'rxjs/operators';
 
-
 import { AngularFirestore, AngularFirestoreCollection, DocumentReference } from '@angular/fire/firestore';
 
 @Injectable({

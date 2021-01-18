@@ -1,15 +1,19 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="switchLoginPage()"expand="block" fill="solid" size="medium" shape="round">
+        Login
+      </ion-button>
+    </ion-buttons>
+    <ion-title>MECAP</ion-title>
   </ion-toolbar>
+  
 </ion-header>
 
 <ion-content>
-    <ion-card>
-        <ion-button (click)="addListenNFC()"expand="block" fill="solid" size="medium" shape="round">
-          READ
-        </ion-button>
-    </ion-card>
+  <ion-card>
+    <ion-card-content>
+      Lecz się
+    </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -20,8 +20,28 @@ const routes: Routes = [
     loadChildren: () => import('./set-visit/set-visit.module').then( m => m.SetVisitPageModule)
   },
   {
+    path: 'previous-visits',
+    loadChildren: () => import('./previous-visits/previous-visits.module').then( m => m.PreviousVisitsPageModule)
+  },
+  {
     path: 'cal-modal',
     loadChildren: () => import('./pages/cal-modal/cal-modal.module').then( m => m.CalModalPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'user-home',
+    loadChildren: () => import('./user-home/user-home.module').then( m => m.UserHomePageModule)
+  },
+  {
+    path: 'register-entry',
+    loadChildren: () => import('./register-entry/register-entry.module').then( m => m.RegisterEntryPageModule)
   },
 ];
 
