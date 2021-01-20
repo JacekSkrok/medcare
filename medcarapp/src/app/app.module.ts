@@ -15,6 +15,8 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 
 import { FileChooser } from '@ionic-native/file-chooser/ngx';
+import { FilePath } from '@ionic-native/file-path/ngx';
+import { Chooser } from '@ionic-native/chooser/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,7 +33,9 @@ import { FileChooser } from '@ionic-native/file-chooser/ngx';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    FileChooser
+    FileChooser,
+    FilePath,
+    Chooser
   ],
   bootstrap: [AppComponent]
 })

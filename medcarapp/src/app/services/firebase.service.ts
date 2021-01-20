@@ -30,6 +30,10 @@ export class FirebaseService {
     return this.visits;
   }
 
+  getVisit() {
+    
+  }
+
   addVisit(visit: Visit): Promise<DocumentReference> {
     return this.visitCollection.add(visit);
   }

@@ -6,10 +6,42 @@
 
 <ion-content>
   <ion-card>
-    <ion-card-content>
-      <ion-button (click)="chooseFile()"></ion-button>
-    </ion-card-content>
-  </ion-card>
-  
+    <ion-item>
+      <ion-label>Specjalista</ion-label>
+      <ion-select placeholder="Select One">
+      <ion-select-option value="r">Lekarz rodzinny</ion-select-option>
+      <ion-select-option value="p">Pediatra</ion-select-option>
+      <ion-select-option value="u">Urolog</ion-select-option>
+      <ion-select-option value="k">Kardiolog</ion-select-option>
+      <ion-select-option value=g>Ginekolog</ion-select-option>
+    </ion-select>
+    </ion-item>
 
+    <ion-item>
+      <ion-label>Rodzaj wizyty</ion-label>
+      <ion-select placeholder="Select One">
+      <ion-select-option value="t">Wizyta tradycyjna</ion-select-option>
+      <ion-select-option value="p">Rozmowa telefoniczna</ion-select-option>
+      <ion-select-option value="v">Porada Video</ion-select-option>
+    </ion-select>
+    </ion-item>
+    <ion-button expand="block" (click)="switchToCalendar()">Sprawdź termin</ion-button>
+  </ion-card>
+</ion-content>
+
+<ion-content>
+  <div class= "ion-padding">
+    <ion-button (click)="chooseFile()" expand="full"
+    color="dark">Choosefile</ion-button>
+  </div>
+</ion-content>
+
+<ion-content>
+  <div class= "ion-padding">
+    <ion-button (click)="pickFile()" expand="full"
+    color="dark">Pickfile</ion-button>
+    <div>
+      {{returnpath}} 
+    </div>
+  </div>
 </ion-content>

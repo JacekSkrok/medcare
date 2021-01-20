@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { Visit } from '../model/Visit';
 
 import { FirebaseService } from '../services/firebase.service'
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-calendar',
@@ -27,11 +28,13 @@ export class CalendarPage implements OnInit {
 
   @ViewChild(CalendarComponent) myCal: CalendarComponent;
 
-  constructor( private fbService: FirebaseService ) { }
+  constructor(  private fbService: FirebaseService,
+                private userService: UserService ) { }
 
  
   ngOnInit(): void {
     this.visits = this.fbService.getVisits();
+    this.createVisitsFromFirebase;
 
   }
 
@@ -66,25 +69,14 @@ export class CalendarPage implements OnInit {
 
   createVisitsFromFirebase() {
     var events = []
-    
-    events.push({
-      title: 'All Day - ',
-      //startTime,
-      //endTime: endTime,
-      allDay: true,
-    });
 
-    this.eventSource = events;
+    for(let i in this.visits) {
+      events[i] = this.visits[i]
+      console.log(events)
+      events.push
+    }
+ 
+    this.eventSource = events
+
   }
-  /*createVisitsFromFirebase(visits) {
-    var events = [];
-    visits.get().startTime
-
-    events.push({
-      titl
-
-    })
-    this.eventSource = events;
-  }
-  */
 }
