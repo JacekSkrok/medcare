@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NFC, Ndef } from '@ionic-native/nfc/ngx';
 
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from '../environments/environment';
 
 import { FileChooser } from '@ionic-native/file-chooser/ngx';
@@ -25,7 +26,8 @@ import { Chooser } from '@ionic-native/chooser/ngx';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule
   ],
   providers: [
     NFC,

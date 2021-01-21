@@ -5,6 +5,7 @@ import { FileChooser } from '@ionic-native/file-chooser/ngx';
 import { FilePath } from '@ionic-native/file-path/ngx';
 
 import { Chooser } from '@ionic-native/chooser/ngx';
+import { FirebaseUploadService } from '../services/firebase-upload.service';
 
 @Component({
   selector: 'app-set-visit',
@@ -15,10 +16,13 @@ export class SetVisitPage implements OnInit {
 
   returnpath: string="";
 
+  fileUploads = [];
+
   constructor(  private fileChooser: FileChooser,
                 private router: Router,
                 private filePath: FilePath,
-                private chooser: Chooser
+                private chooser: Chooser,
+                private firebaseUploadService: FirebaseUploadService
                 ) { }
 
   ngOnInit() {
@@ -44,7 +48,15 @@ export class SetVisitPage implements OnInit {
       .catch((error: any) => console.error(error));
   }
 
-  addFile() {
+  uploadFile(event) {
+    this.firebaseUploadService.storeFile(event.target.files[0]).then((res: any) => {
+      if(res) {
+        this.fileUploads.unshift(res);
+      }
+    },
+    (error: any) => {
+    }
+    )
 
   }
 

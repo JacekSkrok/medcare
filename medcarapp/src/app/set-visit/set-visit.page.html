@@ -45,3 +45,14 @@
     </div>
   </div>
 </ion-content>
+
+<ion-content>
+  <div>
+    <form method="POST" enctype="multipart/form-data">
+      <div>
+        <div><b>Upload file</b></div><br/>
+        <input type="file" (change)="uploadFile($event)" accept=".pdf" />
+      </div>
+    </form>
+  </div>
+</ion-content>
