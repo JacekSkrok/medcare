@@ -4,11 +4,18 @@
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content>
   <ion-card>
-      <ion-button (click)="addListenNFC()"expand="block" fill="solid" size="medium" shape="round">
-        READ
-      </ion-button>
+    <ion-input type="text" text-right id="input" [(ngModel)]="inputValue"></ion-input>
+  </ion-card>
+
+  <ion-card>
+    <ion-button (click)="addListener(inputValue)">
+      WYŚLIJ
+    </ion-button>
+  </ion-card>
+
+  <ion-card>
+    {{ inputValue }}
   </ion-card>
 </ion-content>

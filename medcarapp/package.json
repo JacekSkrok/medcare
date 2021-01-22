@@ -66,6 +66,7 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~3.3.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "phonegap-nfc": "^1.2.0",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
@@ -84,7 +85,8 @@
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-chooser": {},
       "cordova-plugin-filepath": {},
-      "cordova-plugin-filechooser": {}
+      "cordova-plugin-filechooser": {},
+      "phonegap-nfc": {}
     },
     "platforms": [
       "android"

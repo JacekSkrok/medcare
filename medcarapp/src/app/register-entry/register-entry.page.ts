@@ -2,15 +2,60 @@ import { Component, OnInit } from '@angular/core';
 import { NFC, Ndef } from '@ionic-native/nfc/ngx';
 import { NavController, Platform, AlertController, ToastController } from '@ionic/angular';
 import { ChangeDetectorRef } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-register-entry',
   templateUrl: './register-entry.page.html',
   styleUrls: ['./register-entry.page.scss'],
 })
-export class RegisterEntryPage {
 
-  tagid: any;
+export class RegisterEntryPage {
+  writingTag: boolean = false;
+  isWriting: boolean = false;
+  ndefMsg: string    = '';
+
+  inputValue: string = '';
+  subscriptions: Array<Subscription> = new Array<Subscription>();
+
+  constructor(
+    private nfc: NFC,
+    private ndef: Ndef
+  ) {
+    /*
+    this.subscriptions.push(this.nfc.addNdefListener()
+    .subscribe(data => {
+      if ( this.writingTag ) {
+        if( !this.isWriting ) {
+          this.isWriting = true;
+          this.nfc.write
+          .then(() => {
+            this.writingTag = false;
+            this.isWriting = false;
+          });
+        }
+      }
+    }))
+    */
+  }
+
+  addListener(text: string) {
+    this.nfc.addNdefListener(() => {
+      console.log('successfully attached ndef listener');
+    }, (err) => {
+      console.log('error attaching ndef listener', err);
+    }).subscribe((event) => {
+      console.log('received ndef message. the tag contains: ', event.tag);
+      console.log('decoded tag id', this.nfc.bytesToHexString(event.tag.id));
+    
+      let message = this.ndef.textRecord(text);
+      this.nfc.share([message]);
+    })
+  }
+}
+
+
+ /* tagid: any;
   tagdesc: any;
 
   constructor( 
@@ -68,3 +113,4 @@ export class RegisterEntryPage {
     }
 
 }
+*/
