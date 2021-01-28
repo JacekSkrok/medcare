@@ -26,33 +26,24 @@
     </ion-select>
     </ion-item>
     <ion-button expand="block" (click)="switchToCalendar()">Sprawdź termin</ion-button>
-  </ion-card>
-</ion-content>
 
-<ion-content>
-  <div class= "ion-padding">
-    <ion-button (click)="chooseFile()" expand="full"
-    color="dark">Choosefile</ion-button>
-  </div>
-</ion-content>
+    <ion-item>
+      <ion-label>Wybrany termin</ion-label>
+    </ion-item>
 
-<ion-content>
-  <div class= "ion-padding">
-    <ion-button (click)="pickFile()" expand="full"
-    color="dark">Pickfile</ion-button>
-    <div>
-      {{returnpath}} 
-    </div>
-  </div>
-</ion-content>
 
-<ion-content>
-  <div>
-    <form method="POST" enctype="multipart/form-data">
+    <ion-item>
+      <ion-label>Załącz dokumentacje</ion-label>
+    </ion-item>
+
+    <ion-item>
       <div>
-        <div><b>Upload file</b></div><br/>
-        <input type="file" (change)="uploadFile($event)" accept=".pdf" />
+        <form method="POST" enctype="multipart/form-data">
+          <div>
+            <input type="file" (change)="uploadFile($event)" accept=".pdf" />
+          </div>
+        </form>
       </div>
-    </form>
-  </div>
+    </ion-item>
+  </ion-card>
 </ion-content>

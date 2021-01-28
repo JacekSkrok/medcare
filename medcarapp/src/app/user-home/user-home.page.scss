@@ -1,0 +1,21 @@
+ion-header {
+    ion-toolbar{
+        //--background: linear-gradient(90deg, #c8f1d6 100%, #b6f8cd 40%, #91f0b2 0%);
+        height: 20 px;
+        padding: 100 10 px;
+
+    }
+}
+
+ion-content {
+    --background: linear-gradient(90deg, #c8f1d6 0%, #b6f8cd 40%, #91f0b2 100%);
+    ion-card{
+        box-shadow: 4px 4px 10px #d1d1d1, -3px -3px 10px #ffffff;
+
+        ion-card-content {
+            width: 95%;
+            margin: 10px auto;
+        } 
+    }
+}
+
