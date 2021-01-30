@@ -9,3 +9,15 @@ ion-button{
 .avatar{
     margin: auto;
  }
+
+ ion-content {
+    --background: linear-gradient(90deg, #158ebe 0%, #4198bb 40%, #589eb9 100%);
+    ion-card{
+        box-shadow: 4px 4px 10px #d1d1d1, -3px -3px 10px #ffffff;
+
+        ion-card-content {
+            width: 95%;
+            margin: 10px auto;
+        } 
+    }
+}

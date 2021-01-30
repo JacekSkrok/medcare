@@ -13,6 +13,7 @@ import { FirebaseUploadService } from '../services/firebase-upload.service';
   styleUrls: ['./set-visit.page.scss'],
 })
 export class SetVisitPage implements OnInit {
+  message: string="";
 
   returnpath: string="";
 

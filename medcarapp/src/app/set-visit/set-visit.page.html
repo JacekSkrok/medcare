@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>setVisit</ion-title>
+    <ion-title>Umów wizytę</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -25,15 +25,25 @@
       <ion-select-option value="v">Porada Video</ion-select-option>
     </ion-select>
     </ion-item>
-    <ion-button expand="block" (click)="switchToCalendar()">Sprawdź termin</ion-button>
+    <ion-item-divider>
+    </ion-item-divider>
+    <ion-button expand="block" (click)="switchToCalendar()">Wybierz termin</ion-button>
+    <ion-item-divider>
+    </ion-item-divider>
 
     <ion-item>
-      <ion-label>Wybrany termin</ion-label>
+      <ion-label>Krótki opis celu porady:</ion-label>
     </ion-item>
-
+    <ion-item>
+      <ion-item>
+        <ion-textarea placeholder="Enter more information here..."></ion-textarea>
+      </ion-item>
+    </ion-item>
+    <ion-item-divider>
+    </ion-item-divider>
 
     <ion-item>
-      <ion-label>Załącz dokumentacje</ion-label>
+      <ion-label>Załącz dokumentację medyczną</ion-label>
     </ion-item>
 
     <ion-item>
@@ -46,4 +56,7 @@
       </div>
     </ion-item>
   </ion-card>
+  <ion-button expand="block">
+    Umów wizytę
+  </ion-button>
 </ion-content>
