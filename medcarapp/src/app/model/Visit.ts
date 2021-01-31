@@ -3,5 +3,7 @@ export interface Visit {
     doctorName: string,
     startTime: Date,
     endTime: Date,  
-    createdAt: any;
+    createdAt: any,
+    visitType: string,
+    specialisation: string,
 }

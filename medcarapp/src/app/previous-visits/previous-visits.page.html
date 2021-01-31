@@ -1,9 +1,21 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>previousVisits</ion-title>
+    <ion-title>Historia wizyt</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Wizyty</ion-label>
+    </ion-list-header>
+    <ion-card *ngFor="let previousVisits of (previousVisits | async)">
+      <ion-card-content>
+        <h2>{{previousVisits.specialisation}}</h2>
+        <h2>{{previousVisits.doctorName}}</h2>
+        <h2>{{previousVisits.startTime}}</h2>
+        <ion-datetime value="previousVisits.startTime" display-timezone="utc"></ion-datetime>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
 </ion-content>
