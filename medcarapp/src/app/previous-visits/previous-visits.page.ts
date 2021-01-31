@@ -10,6 +10,8 @@ import { PreviousVisitsService } from '../services/previous-visits.service';
 })
 export class PreviousVisitsPage implements OnInit {
   previousVisits: Observable<Visit[]>;
+  today: Date;
+
 
   constructor( private pvService: PreviousVisitsService ) { }
 

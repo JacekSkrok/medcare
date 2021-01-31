@@ -4,6 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
   <ion-list>
     <ion-list-header>
@@ -13,8 +14,10 @@
       <ion-card-content>
         <h2>{{previousVisits.specialisation}}</h2>
         <h2>{{previousVisits.doctorName}}</h2>
-        <h2>{{previousVisits.startTime}}</h2>
-        <ion-datetime value="previousVisits.startTime" display-timezone="utc"></ion-datetime>
+        <h2>{{previousVisits.startTime.toDate() | date: 'dd/MM/yyyy' }}</h2>
+        <h2>{{previousVisits.startTime.toDate() | date: 'HH:mm' }} - 
+          {{previousVisits.endTime.toDate() | date: 'HH:mm' }}</h2>
+
       </ion-card-content>
     </ion-card>
   </ion-list>
