@@ -34,6 +34,7 @@ export class CalendarPage{
         event.id = snap.payload.doc.id;
         event.endTime = event.endTime.toDate();
         event.startTime = event.startTime.toDate();
+        event.doctorName = event.doctorName;
         this.eventSource.push(event);
       });
     });

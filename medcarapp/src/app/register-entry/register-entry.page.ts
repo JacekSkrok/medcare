@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { NFC, Ndef } from '@ionic-native/nfc/ngx';
-import { NavController, Platform, AlertController, ToastController } from '@ionic/angular';
-import { ChangeDetectorRef } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -39,7 +37,7 @@ export class RegisterEntryPage {
     */
   }
 
-  addListener(text: string) {
+  addListener(visitID: string) {
     this.nfc.addNdefListener(() => {
       console.log('successfully attached ndef listener');
     }, (err) => {
@@ -48,8 +46,8 @@ export class RegisterEntryPage {
       console.log('received ndef message. the tag contains: ', event.tag);
       console.log('decoded tag id', this.nfc.bytesToHexString(event.tag.id));
     
-      let message = this.ndef.textRecord(text);
-      this.nfc.share([message]);
+      let visitid = this.ndef.textRecord(visitID);
+      this.nfc.share([visitid]);
     })
   }
 }

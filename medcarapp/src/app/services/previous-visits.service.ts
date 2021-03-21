@@ -31,12 +31,12 @@ export class PreviousVisitsService {
     return this.visits;
   }
 
-  getPort(id: string): Observable<Visit> {
+  getVisit(id: string): Observable<Visit> {
     return this.visitCollection.doc<Visit>(id).valueChanges().pipe(
         take(1),
-        map(port => {
-          port.id = id;
-          return port;
+        map(visit => {
+          visit.id = id;
+          return visit;
         })
     );
   }

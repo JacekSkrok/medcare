@@ -56,9 +56,7 @@ export class SetVisitPage implements OnInit {
       }
     },
     (error: any) => {
-    }
-    )
-
+    })
   }
 
 }
